@@ -107,7 +107,7 @@ Ce projet est libre d'utilisation pour l'apprentissage et à des fins personnell
 Merci d'avoir consulté ce projet ! N'hésitez pas à l'utiliser, le modifier et l'améliorer pour votre apprentissage du développement web.
 
 
-##Aperçu
+## 🎨 Aperçu
 
 <img width="621" height="479" alt="image" src="https://github.com/user-attachments/assets/06eab0b1-00ca-46da-bb51-40698c66af4c" />
 
