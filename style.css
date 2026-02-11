@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #667eea ;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 550px;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    background: #424040;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#input-tache {
+    flex: 1;
+    height: 45px;
+    border-radius: 10px;
+    padding: 0 15px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+#input-tache:focus {
+    box-shadow: 0 0 0 3px rgba(9, 96, 209, 0.3);
+}
+
+#btn-ajouter {
+    background: #0960d1;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 0 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+#btn-ajouter:hover {
+    background: #0750b8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(9, 96, 209, 0.4);
+}
+
+#btn-ajouter:active {
+    transform: translateY(0);
+}
+
+.list {
+    background: #424040;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    min-height: 200px;
+}
+
+.list h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+}
+
+#liste-taches {
+    list-style: none;
+    width: 100%;
+}
+
+#liste-taches li {
+    background: #ffffff;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+    animation: slideIn 0.3s ease;
+}
+
+#liste-taches li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style pour les tâches complétées */
+#liste-taches li.completed {
+    background: #e8e8e8;
+    opacity: 0.7;
+}
+
+#liste-taches li.completed .tache-texte {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Texte de la tâche */
+.tache-texte {
+    flex: 1;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Boutons d'action */
+.tache-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-supprimer {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.btn-supprimer:hover {
+    background: #ff3838;
+    transform: scale(1.05);
+}
+
+/* Checkbox personnalisée */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Animation d'apparition */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Message quand liste vide */
+.vide-message {
+    text-align: center;
+    color: #aaa;
+    padding: 40px;
+    font-style: italic;
+}
+
+
+/* Tablettes et petits écrans */
+@media (max-width: 768px) {
+    .content {
+        width: 90%;
+        max-width: 550px;
+    }
+    
+    .list h3 {
+        font-size: 20px;
+    }
+    
+    #liste-taches li {
+        padding: 12px 15px;
+    }
+    
+    .tache-texte {
+        font-size: 15px;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 600px) {
+    .content {
+        width: 95%;
+        gap: 15px;
+    }
+    
+    form {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    #input-tache {
+        width: 100%;
+        font-size: 15px;
+    }
+    
+    #btn-ajouter {
+        width: 100%;
+        height: 45px;
+    }
+    
+    .list {
+        padding: 15px;
+    }
+    
+    .list h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    
+    #liste-taches li {
+        flex-wrap: wrap;
+        padding: 10px 12px;
+        gap: 8px;
+    }
+    
+    .tache-texte {
+        font-size: 14px;
+        word-break: break-word;
+        flex: 1 1 100%;
+        margin-left: 30px;
+    }
+    
+    .btn-supprimer {
+        padding: 6px 12px;
+        font-size: 13px;
+        margin-left: auto;
+    }
+    
+    input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        left: 12px;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 360px) {
+    body {
+        padding: 10px;
+    }
+    
+    .content {
+        width: 100%;
+    }
+    
+    form {
+        padding: 12px;
+    }
+    
+    .list h3 {
+        font-size: 16px;
+    }
+    
+    .tache-texte {
+        font-size: 13px;
+    }
+}
